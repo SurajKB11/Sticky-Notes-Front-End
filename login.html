@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sticky Notes</title>
+		<style>
+			.box{
+				width:400px;
+				padding:30px;
+				background-color:black;
+				text-align:center;
+			}
+			.white-text{
+				color:white;
+			}
+			.align-center{
+				justify-content:center;
+				display:flex;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="align-center">
+			<form class="box" onsubmit="handleform(event)" id="form-1">
+				<h2 class="white-text">Login To Access Your Sticky Notes</h2>
+				<input type="text" value="enter username" id="username"/>
+				<input type="password" value="enter password" id="password"/>
+				<input type="submit" value="LOGIN"/>
+			</form>
+			</div>
+			<div class="align-center">
+			<form class="box">
+				<hr/>
+				<h2 class="white-text">Register If Your're New</h2>
+				<input type="text" value="username"/>
+				<input type="password" value="password"/>
+				<button>REGISTER</button>
+			</form>
+		</div>
+	</body>
+	<script>
+		var form=document.getElementById('form-1');
+		form.addEventListener('submit',function(execute){
+			event.preventDefault();
+			var username=document.getElementById('username').value;
+			console.log(username);
+			var password=document.getElementById('password').value;
+			console.log(password);
+		})
+		function handleform(e){
+			e.preventDefault();
+			var username=document.getElementById('username').value;
+			var password=document.getElementById('password').value;
+			if(username==="suraj"&&password==="suraj")
+			{
+				window.location.href="stickynotesinterface.html";
+			}
+			else{
+				alert("wrong credentials!!");
+			}
+		}
+	</script>
+</html>
